@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+       .container {
+            display: flex;
+            gap: 20px;
+            width: 600px; /* Largura fixa */
+            height: 550px; /* Altura fixa */
+            overflow: auto;
+        }
+        img {
+            height: 500px; /* Altura fixa igual para ambas */
+            width: auto; /* Largura proporcional */
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+ 	audio {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Link_29.webp" alt="Descrição da Imagem 1">
+        <img src="numero.png" alt="Descrição da Imagem 2">
+    </div>
+ <audio controls autoplay loop>
+        <source src="malandro.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+</body>
+</html>
