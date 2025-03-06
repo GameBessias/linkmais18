@@ -10,28 +10,56 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Garante que o body ocupe a tela toda */
             margin: 0;
             background-color: #f0f0f0;
         }
-       .container {
+        .container {
             display: flex;
+            flex-wrap: wrap; /* Permite que as imagens quebrem linha em telas pequenas */
             gap: 20px;
-            width: 600px; /* Largura fixa */
-            height: 550px; /* Altura fixa */
+            max-width: 90%; /* Limita a largura máxima do container */
             overflow: auto;
+            padding: 20px; /* Adiciona um espaço interno */
+            justify-content: center;
         }
         img {
-            height: 500px; /* Altura fixa igual para ambas */
-            width: auto; /* Largura proporcional */
+            max-height: 500px; /* Altura máxima, mas ajustável */
+            width: auto; /* Mantém a proporção */
+            max-width: 100%; /* Garante que a imagem não exceda o container */
             border: 2px solid #333;
             border-radius: 10px;
+            object-fit: cover; /* Melhora o corte da imagem, se necessário */
         }
- 	audio {
+        audio {
             position: fixed;
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
+            width: 90%; /* Largura ajustável */
+            max-width: 300px; /* Limite máximo para o controle de áudio */
+        }
+
+        /* Media Query para telas menores (ex.: celulares) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Empilha as imagens verticalmente */
+                gap: 10px; /* Reduz o espaçamento */
+                padding: 10px;
+            }
+            img {
+                max-height: 300px; /* Reduz a altura em telas pequenas */
+            }
+            audio {
+                width: 80%; /* Ajusta o áudio para telas menores */
+            }
+        }
+
+        /* Media Query para telas muito pequenas (ex.: celulares menores) */
+        @media (max-width: 480px) {
+            img {
+                max-height: 200px; /* Ainda menor para telas pequenas */
+            }
         }
     </style>
 </head>
@@ -40,8 +68,9 @@
         <img src="Link_29.webp" alt="Descrição da Imagem 1">
         <img src="numero.png" alt="Descrição da Imagem 2">
     </div>
- <audio controls autoplay loop>
+    <audio controls autoplay loop>
         <source src="malandro.mp3" type="audio/mp3">
         Seu navegador não suporta o elemento de áudio.
+    </audio>
 </body>
 </html>
