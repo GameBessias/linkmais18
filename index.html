@@ -17,19 +17,24 @@
         .container {
             display: flex;
             gap: 20px;
-            width: 90vw; /* Largura relativa à viewport */
-            max-width: 1200px; /* Limite máximo para telas grandes */
+            width: 90vw;
+            max-width: 1200px;
             justify-content: center;
             align-items: center;
             padding: 20px;
         }
+        .image-wrapper {
+            width: 45%; /* Controla o tamanho do contêiner da imagem */
+            height: auto;
+            max-width: 100%;
+        }
         img {
-            width: 45%; /* Cada imagem ocupa 45% do container */
-            height: auto; /* Mantém a proporção */
-            max-width: 100%; /* Garante que não exceda o container */
+            width: 100%; /* Imagem ocupa 100% do contêiner pai */
+            height: auto; /* Mantém proporção */
             border: 2px solid #333;
             border-radius: 10px;
-            object-fit: cover; /* Mantém a proporção e corta se necessário */
+            object-fit: contain; /* Garante visibilidade total */
+            display: block;
         }
         audio {
             position: fixed;
@@ -43,31 +48,34 @@
         /* Media Query para telas menores */
         @media (max-width: 768px) {
             .container {
-                flex-direction: row; /* Mantém lado a lado, mas ajusta */
-                width: 95vw; /* Ajusta para telas menores */
+                width: 95vw;
                 gap: 10px;
             }
-            img {
-                width: 48%; /* Ajusta o tamanho das imagens */
+            .image-wrapper {
+                width: 48%;
             }
         }
 
         /* Media Query para telas muito pequenas */
         @media (max-width: 480px) {
             .container {
-                flex-direction: column; /* Empilha as imagens */
+                flex-direction: column;
                 width: 90vw;
             }
-            img {
-                width: 100%; /* Imagens ocupam toda a largura disponível */
+            .image-wrapper {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="Link_29.webp" alt="Descrição da Imagem 1">
-        <img src="numero.png" alt="Descrição da Imagem 2">
+        <div class="image-wrapper">
+            <img src="Link_29.webp" alt="Descrição da Imagem 1">
+        </div>
+        <div class="image-wrapper">
+            <img src="numero.png" alt="Descrição da Imagem 2">
+        </div>
     </div>
     <audio controls autoplay loop>
         <source src="malandro.mp3" type="audio/mp3">
