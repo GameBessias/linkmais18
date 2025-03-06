@@ -24,13 +24,13 @@
             padding: 20px;
         }
         .image-wrapper {
-            width: 45%; /* Controla o tamanho do contêiner da imagem */
-            height: auto;
+            width: 45%; /* Controla o tamanho do contêiner */
             max-width: 100%;
         }
         img {
-            width: 100%; /* Imagem ocupa 100% do contêiner pai */
+            width: 100%; /* Ocupa o contêiner */
             height: auto; /* Mantém proporção */
+            max-height: 500px; /* Limite de altura baseado no código original */
             border: 2px solid #333;
             border-radius: 10px;
             object-fit: contain; /* Garante visibilidade total */
@@ -54,6 +54,9 @@
             .image-wrapper {
                 width: 48%;
             }
+            img {
+                max-height: 350px; /* Reduz altura proporcionalmente */
+            }
         }
 
         /* Media Query para telas muito pequenas */
@@ -64,6 +67,9 @@
             }
             .image-wrapper {
                 width: 100%;
+            }
+            img {
+                max-height: 250px; /* Ajuste para telas pequenas */
             }
         }
     </style>
