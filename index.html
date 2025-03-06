@@ -10,55 +10,56 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh; /* Garante que o body ocupe a tela toda */
+            min-height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
         }
         .container {
             display: flex;
-            flex-wrap: wrap; /* Permite que as imagens quebrem linha em telas pequenas */
             gap: 20px;
-            max-width: 90%; /* Limita a largura máxima do container */
-            overflow: auto;
-            padding: 20px; /* Adiciona um espaço interno */
+            width: 90vw; /* Largura relativa à viewport */
+            max-width: 1200px; /* Limite máximo para telas grandes */
             justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
         img {
-            max-height: 500px; /* Altura máxima, mas ajustável */
-            width: auto; /* Mantém a proporção */
-            max-width: 100%; /* Garante que a imagem não exceda o container */
+            width: 45%; /* Cada imagem ocupa 45% do container */
+            height: auto; /* Mantém a proporção */
+            max-width: 100%; /* Garante que não exceda o container */
             border: 2px solid #333;
             border-radius: 10px;
-            object-fit: cover; /* Melhora o corte da imagem, se necessário */
+            object-fit: cover; /* Mantém a proporção e corta se necessário */
         }
         audio {
             position: fixed;
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 90%; /* Largura ajustável */
-            max-width: 300px; /* Limite máximo para o controle de áudio */
+            width: 90%;
+            max-width: 300px;
         }
 
-        /* Media Query para telas menores (ex.: celulares) */
+        /* Media Query para telas menores */
         @media (max-width: 768px) {
             .container {
-                flex-direction: column; /* Empilha as imagens verticalmente */
-                gap: 10px; /* Reduz o espaçamento */
-                padding: 10px;
+                flex-direction: row; /* Mantém lado a lado, mas ajusta */
+                width: 95vw; /* Ajusta para telas menores */
+                gap: 10px;
             }
             img {
-                max-height: 300px; /* Reduz a altura em telas pequenas */
-            }
-            audio {
-                width: 80%; /* Ajusta o áudio para telas menores */
+                width: 48%; /* Ajusta o tamanho das imagens */
             }
         }
 
-        /* Media Query para telas muito pequenas (ex.: celulares menores) */
+        /* Media Query para telas muito pequenas */
         @media (max-width: 480px) {
+            .container {
+                flex-direction: column; /* Empilha as imagens */
+                width: 90vw;
+            }
             img {
-                max-height: 200px; /* Ainda menor para telas pequenas */
+                width: 100%; /* Imagens ocupam toda a largura disponível */
             }
         }
     </style>
