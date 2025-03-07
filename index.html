@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,82 +11,38 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
         }
-        .container {
+       .container {
             display: flex;
             gap: 20px;
-            width: 90vw;
-            max-width: 1200px;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .image-wrapper {
-            width: 45%; /* Controla o tamanho do contêiner */
-            max-width: 100%;
+            width: 600px; /* Largura fixa */
+            height: 550px; /* Altura fixa */
+            overflow: auto;
         }
         img {
-            width: 100%; /* Ocupa o contêiner */
-            height: auto; /* Mantém proporção */
-            max-height: 500px; /* Limite de altura baseado no código original */
+            height: 500px; /* Altura fixa igual para ambas */
+            width: auto; /* Largura proporcional */
             border: 2px solid #333;
             border-radius: 10px;
-            object-fit: contain; /* Garante visibilidade total */
-            display: block;
         }
-        audio {
+ 	audio {
             position: fixed;
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 90%;
-            max-width: 300px;
-        }
-
-        /* Media Query para telas menores */
-        @media (max-width: 768px) {
-            .container {
-                width: 95vw;
-                gap: 10px;
-            }
-            .image-wrapper {
-                width: 48%;
-            }
-            img {
-                max-height: 350px; /* Reduz altura proporcionalmente */
-            }
-        }
-
-        /* Media Query para telas muito pequenas */
-        @media (max-width: 480px) {
-            .container {
-                flex-direction: column;
-                width: 90vw;
-            }
-            .image-wrapper {
-                width: 100%;
-            }
-            img {
-                max-height: 250px; /* Ajuste para telas pequenas */
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="image-wrapper">
-            <img src="Link_29.webp" alt="Descrição da Imagem 1">
-        </div>
-        <div class="image-wrapper">
-            <img src="numero.png" alt="Descrição da Imagem 2">
-        </div>
+        <img src="Link_29.webp" alt="Descrição da Imagem 1">
+        <img src="numero.png" alt="Descrição da Imagem 2">
     </div>
-    <audio controls autoplay loop>
+ <audio controls autoplay loop>
         <source src="malandro.mp3" type="audio/mp3">
         Seu navegador não suporta o elemento de áudio.
-    </audio>
 </body>
 </html>
